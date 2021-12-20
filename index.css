@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+body { 
+    background-color: hsl(233, 47%, 7%); 
+    margin: 0;
+    padding: 0;
+}
+
+h1, p { font-family: 'Inter', sans-serif; }
+p { font-size: 15px; color: hsla(0, 0%, 100%, 0.75);}
+
+h1 { color: hsl(0, 0%, 100%); }
+h1 mark { background-color: transparent; color: hsl(277, 64%, 61%); }
+
+main { display: flex; width: 100%; height: 100vh; align-items: center; justify-content: center; padding: 15px; box-sizing: border-box; }
+
+.card {
+    max-width: 1100px;
+    height: auto;
+    display: flex;
+    background-color: hsl(244, 38%, 16%);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card .leftCol {
+    padding: 75px 120px 65px 70px;
+}
+
+.card .leftCol p.description { 
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 26px;
+    
+}
+
+.rigthCol {
+    position: relative;
+}
+
+.rigthCol:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(277, 64%, 61%);
+    mix-blend-mode: multiply;
+}
+
+.rigthCol img {
+    height: 100%;
+}
+
+.countContainer { 
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.countContainer .innerCounter p:first-child {
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    margin: 0;
+}
+
+p.subtitle { 
+    /* font-family: 'Lexend Deca', sans-serif; */
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 375px) {
+
+    main { 
+        padding: 40px 15px; 
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    h1, p { text-align: center; }
+    
+    .card {
+        flex-direction: column-reverse;
+    }
+
+    .card .leftCol { padding: 20px; }
+    .card .leftCol p.description { padding: 0 40px; }
+
+    .countContainer { flex-direction: column;}
+
+    p.subtitle { margin-bottom: 25px; }
+
+    .rigthCol::after { height: calc(100% - 4px);}
+}
